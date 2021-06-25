@@ -1,0 +1,349 @@
+body {
+  font-family: Open Sans;
+  width: 100%;
+  position: relative;
+} 
+
+h1 {
+  font-size: large;
+}
+
+#yes, #no { cursor: pointer;}
+
+input, select {
+  min-height: 30px;
+  max-width: 100px;
+}
+
+p {
+  word-break: break-word;
+  white-space: normal;
+  width: 100%;
+}
+
+nav {
+  width: 100%;
+  max-width: 100%;
+  height: 50px;
+  background-color: #333333;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#nav-title {
+  padding-left: 7.5%;
+}
+
+#logout {
+  padding-right: 7.5%;
+  text-decoration: none;
+  color: white;
+  float: right;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+::-webkit-calendar-picker-indicator { display: none; }
+
+#app {
+  width: 85%;
+  max-width: 900px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  /* border: solid red 2px; */
+}
+
+div#top {
+  display: flex;
+  flex-direction: column;
+}
+
+div#heading {
+  flex: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+div#heading > h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+img#header-img {
+  width: 50%;
+  align-self: flex-end;
+  margin: 0;
+}
+
+div#top > p {
+  margin-bottom: 20px;
+}
+
+#past-activity, #future-plans {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+#past-activity {
+  background-color: #53E0CD;
+}
+
+#past-activity-heading {
+  display: flex;
+  align-items: center;
+  width: 100px;
+}
+
+#past-activity-form {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+  width: 80%;
+  max-width: 300px;
+}
+
+#future-plans-form {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 300px;
+  height: 80%;
+}
+
+#past-activity-form p {
+  font-weight: bold;
+}
+
+#activity {
+  display: flex;
+  align-items: flex-end;
+}
+
+.activity-item {
+  flex: 50%;
+}
+
+#date > input {
+  max-width: 100px;
+}
+
+#td-units {
+  display: flex;
+  justify-content: space-between;
+}
+
+#td-units > div {
+  max-width: 50%;
+}
+
+#td-units input {
+  max-width: 75%;
+  background-color: white;
+}
+
+#future-plans {
+  background-color: #B1BAB9;
+}
+
+button {
+  padding: 10px;
+  font-size: small;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 2px 2px 5px;
+  max-width: 150px;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  width: 100px;
+  align-self: center;
+}
+
+.black-btn {
+  background-color: black;
+  color: white;
+}
+
+p.title {
+  font-weight: bold;
+}
+
+#past-activity-top, #future-plans-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+}
+
+#past-activity-msg, #future-plans-msg {
+  display: none;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+div#reminder {
+  display: none;
+  background-color: #6666cc;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#reminder-title {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#reminder-q, #yes, #no {
+  color: white;
+}
+
+.reminder-item {
+  flex: 40%;
+  padding-left: 10px;
+}
+
+#chart-container {
+  background-color: whitesmoke;
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 150px;
+  left: 20px;
+  right: 20px;
+  margin: auto;
+  padding: 20px;
+  min-width: 300px;
+  height: 500px;
+}
+
+#chart-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  height: 180px;
+}
+
+#chart-anchor {
+  max-width: 400px;
+  margin: auto; 
+}
+
+#overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+@media (min-width: 480px) {
+  #app {
+    width: 80%;
+  }
+
+  div#top {
+    flex-flow: row wrap;
+  }
+
+  div#heading {
+    flex: 50%;
+  }
+
+  div#heading > h1 {
+    font-size: 50px; 
+  }
+
+  img#header-img {
+    flex: 50%;
+  }
+
+  .reminder-item {
+    flex: 20%;
+  }
+}
+
+@media (min-width: 768px) {
+  #chart-top {
+    flex-direction: row;
+  }
+
+  #future-plans-form {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 90%;
+    max-width: 600px;
+    height: 65%;
+    align-self: flex-start;
+  }
+
+  #past-activity-form {
+    width: 90%;
+    max-width: 700px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #past-activity-form > div {
+    flex: 20%;
+  }
+
+  #for {
+    text-align: center;
+    flex: 50%;
+  }
+
+  #past-activity, #future-plans {
+    height: 150px;
+    padding-top: 0;
+  }
+
+  #activity {
+    justify-self: space-between;
+  }
+
+  .submit-btn {
+    max-width: 100px;
+  }
+
+  #submit-future {
+    align-self: flex-end;
+  }
+
+  #past-activity-top, #future-plans-top {
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #past-activity-form {
+    max-width: 800px;
+  }
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarChart Example</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="./main.css" rel="stylesheet" type="text/css" />
+  <link href="./reset.css" rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="./barchart.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script defer src='./js/fitness1.js'></script>
+  <script type="module" src="./js/main.js"></script>
+</head>
+
+<div id='overlay'></div>
+
+<header>
+  <nav>
+    <h1 id='nav-title'>Fitness Log</h1>
+    <a id='logout' href='/logout'>
+      <h1>Log Out</h1>
+    </a>
+  </nav>
+</header>
+
+<body>
+    <div id='chart-container'>
+      <span id='chart-exit' style='float:right; cursor:pointer'>&#10005</span>
+      <div id='chart-top'>
+        <div>
+          <strong>View activity for:</strong>
+          <select id='chart-activity'>
+            <option>Walk</option>
+            <option>Run</option>
+            <option>Swim</option>
+            <option>Basketball</option>
+            <option>Bike</option>
+          </select>
+        </div>
+        <div>
+          <strong>For week ending:</strong>
+          <input type='date' id='chart-week'></input>
+        </div>
+        <button id='chart-btn' class='black-btn'>Go</button>
+      </div>
+      <div id='chart-anchor'></div>
+    </div>
+
+    <div id='app'>
+      <div id='top'>
+        <div id='heading'>
+          <h1>Welcome back,</h1>
+          <h1 id='fname'></h1>
+        </div>
+        <img id='header-img' src='./img/header image.png'></img>
+        <p>What activity session are you logging?</p>
+      </div>
+
+      <div id='reminder'>
+        <div class='reminder-item'>
+          <p id='reminder-title'>
+            Reminder
+          </p>
+        </div>
+        <div class='reminder-item'>
+          <p id='reminder-q'></p>
+        </div>
+        <div class='reminder-item'>
+          <p id='yes' class='underline'>Yes</p>
+        </div>
+        <div class='reminder-item'>
+          <p id='no' class='underline'>No</p>
+        </div>
+      </div>
+
+      <div id='past-activity-heading'>
+        <p class='title'>Past Activity</p>
+        <button id='progress-btn' class='black-btn'>
+          View Progress
+        </button>
+      </div>
+
+      <div id='past-activity'>
+
+        <div id='past-activity-top'>
+          <p id='past-activity-msg'></p>
+          <button id='past-btn'>Add New Activity</button>
+        </div>
+        
+        <div id='past-activity-form'>
+          <div id='date'>
+            <p>Date</p>
+            <input id='date-past' type='date'></input>
+          </div>
+          <div id='activity'>
+            <div class='activity-item'>
+              <p>Activity</p>
+              <select id='dropdown-past'>
+                <option>Walk</option>
+                <option>Run</option>
+                <option>Swim</option>
+                <option>Basketball</option>
+                <option>Bike</option>
+              </select>
+            </div>
+            <p class='activity-item' id='for'>for</p>
+          </div>
+          <div id='td-units'>
+            <div id='time_dist'>
+              <p>Time/Distance</p>
+              <input id='td-input' type='number'></input>
+            </div>
+            <div id='units'>
+              <p>Units</p>
+              <input disabled id='units-input'></input>
+            </div>
+          </div>
+          <button id='submit-past' class='submit-btn black-btn'>Submit</button>
+        </div>
+      </div>
+
+      <p class='title'>Future Plans</p>
+      <div id='future-plans'>
+        <div id='future-plans-top'>
+          <p id='future-plans-msg'></p>
+          <button id='future-btn'>Add New Activity</button>
+        </div>
+
+        <div id='future-plans-form'>
+          <div id='date'>
+            <p>Date</p>
+            <input id='date-future' type='date'></input>
+          </div>
+          <div id='activity'>
+            <div class='activity-item'>
+              <p>Activity</p>
+              <select id='dropdown-future'>
+                <option>Walk</option>
+                <option>Run</option>
+                <option>Swim</option>
+                <option>Walk</option>
+                <option>Basketball</option>
+                <option>Bike</option>
+              </select>
+            </div>
+          </div>
+          <button id='submit-future' class='submit-btn black-btn'>Submit</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
